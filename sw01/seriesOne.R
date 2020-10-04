@@ -21,6 +21,8 @@ x[x <= 3]
 
 sort(x)
 
+x
+
 order(x)
 
 x[4] <- 8
@@ -104,4 +106,16 @@ colnames(data)[2] <- "Genf"
 
 data
 
-data3 <- data[order(data[, ’Zurich’]), ])
+# data3 <- data[order(data[, ’Zurich’]), ])
+
+# 1.6
+d.fuel <- read.table(file = "sw01/d.fuel.dat", header = T, sep = ",")
+
+d.fuel[5, ]
+
+d.fuel[1:5, ]
+d.fuel[c(1:3, 57:60),]
+
+mean(d.fuel[, "mpg"])
+mean(d.fuel[ 7:22, "mpg"])
+

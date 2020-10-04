@@ -45,3 +45,63 @@ height <- c(1.75, 1.80, 1.65, 1.90, 1.74, 1.91)
 bmi <- weight / height ^ 2
 bmi 
 
+# 1.4
+x <- c(4, 10, 3, NA, NA, 1, 8)
+mean(x)
+
+# some explanations
+
+# > x=c(5,4,6,4,2,1,5,NA)
+# > x!=NA
+# [1] NA NA NA NA NA NA NA NA
+# > x==NA
+# [1] NA NA NA NA NA NA NA NA
+# > is.na(x)
+# [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
+# > y <- x[which(!is.na(x))]+2
+# > y
+# [1] 7 6 8 6 4 3 7
+# > 
+
+x[which(!is.na(x))]
+
+mean(x[which(!is.na(x))])
+
+sort(x) # removes NA
+
+order(x) # removes NA
+
+z <- c(4, 2, 8, 9, 7, 5, 2, 1)
+
+plot(z, type = "l",
+col = "blue",
+lty = 2,
+main = "Haupttitel",
+xlab = "Ein paar Zahlen",
+ylab = "Andere Zahlen")
+
+abline(v = 3, col = "green")
+abline(h = 4, col = "red", lty = "dotted")
+abline(a = 1, b = 2, col = "brown", lty = "longdash")
+
+# 1.5
+getwd()
+
+data <- read.csv("sw01/weather.csv")
+data
+data[2, 3]
+data[3]
+data[""]
+data[4,]
+data1 <- data[c("Luzern", "Zurich")]
+data1
+
+write.csv(data1, file = "sw01/weather2.csv")
+
+rownames(data)[3]
+
+colnames(data)[2] <- "Genf"
+
+data
+
+data3 <- data[order(data[, ’Zurich’]), ])
